@@ -512,19 +512,20 @@
     <!-- ===== DHAR ULTRATECH ===== -->
     <div class="party-header">
       <div class="party-title">🏭 DHAR · ULTRATECH</div>
-      <div class="party-total">1 Route · 388 Total Trips</div>
+      <div class="party-total">2 Routes · 396 Total Trips</div>
     </div>
 
     <!-- DHAR SUMMARY -->
     <div class="summary-grid">
-      <div class="summary-box"><span>Total Trips</span><strong>388</strong></div>
-      <div class="summary-box"><span>Verified</span><strong>351</strong></div>
-      <div class="summary-box"><span>Running</span><strong>45</strong></div>
-      <div class="summary-box"><span>Verification</span><strong>90.5%</strong></div>
+      <div class="summary-box"><span>Total Trips</span><strong>396</strong></div>
+      <div class="summary-box"><span>Verified</span><strong>358</strong></div>
+      <div class="summary-box"><span>Running</span><strong>46</strong></div>
+      <div class="summary-box"><span>Verification</span><strong>90.4%</strong></div>
     </div>
 
-    <!-- DHAR CARD -->
+    <!-- DHAR CARDS -->
     <div class="grid">
+      <!-- Dahej -->
       <div class="card">
         <div class="route">Dahej → Dhar</div>
         <div class="total counter" data-count="388">0</div>
@@ -536,6 +537,20 @@
         <div class="row"><span>Verified</span><span>351</span></div>
         <div class="row"><span>Running</span><span>45</span></div>
         <div class="progress"><div class="fill" style="width:90.5%"></div></div>
+      </div>
+
+      <!-- Baroda -->
+      <div class="card">
+        <div class="route">Baroda → Dhar</div>
+        <div class="total counter" data-count="8">0</div>
+        <div class="row"><span>High Risk</span><span>6</span></div>
+        <div class="row"><span>Medium Risk</span><span>2</span></div>
+        <div class="row"><span>Low Risk</span><span>0</span></div>
+        <div class="row"><span>Good Risk</span><span>0</span></div>
+        <hr>
+        <div class="row"><span>Verified</span><span>7</span></div>
+        <div class="row"><span>Running</span><span>1</span></div>
+        <div class="progress"><div class="fill" style="width:87.5%"></div></div>
       </div>
     </div>
 
@@ -562,10 +577,11 @@
         <thead><tr><th>Route</th><th>Total</th><th>Verified</th><th>Running</th><th>High</th><th>Medium</th><th>Low</th><th>Good</th></tr></thead>
         <tbody>
           <tr><td class="route-name">Dahej → Dhar</td><td>388</td><td>351</td><td>45</td><td>266</td><td>15</td><td>3</td><td>0</td></tr>
+          <tr><td class="route-name">Baroda → Dhar</td><td>8</td><td>7</td><td>1</td><td>6</td><td>2</td><td>0</td><td>0</td></tr>
         </tbody>
       </table>
       <div class="data-foot">
-        <span>⚡ Dhar Totals · Verified: <strong>351</strong> &nbsp;|&nbsp; Running: <strong>45</strong> &nbsp;|&nbsp; Combined: <strong>388</strong></span>
+        <span>⚡ Dhar Totals · Verified: <strong>358</strong> &nbsp;|&nbsp; Running: <strong>46</strong> &nbsp;|&nbsp; Combined: <strong>396</strong></span>
         <span>Data: 1 Aug – 17 Aug 2026</span>
       </div>
     </div>
@@ -722,8 +738,13 @@
     new Chart(document.getElementById('dharBarChart'), {
       type: 'bar',
       data: {
-        labels: ['Dahej → Dhar'],
-        datasets: [{ label: 'Trips', data: [388], backgroundColor: ['#4d9de0'], borderRadius: 10 }]
+        labels: ['Dahej → Dhar', 'Baroda → Dhar'],
+        datasets: [{
+          label: 'Trips',
+          data: [388, 8],
+          backgroundColor: ['#4d9de0', '#e6873c'],
+          borderRadius: 10
+        }]
       },
       options: {
         responsive: true,
@@ -756,7 +777,7 @@
       data: {
         labels: ['Verified', 'Running'],
         datasets: [{
-          data: [351, 45],
+          data: [358, 46],
           backgroundColor: ['#3fc7a7', '#e85b62'],
           borderColor: 'rgba(12,26,34,.8)',
           borderWidth: 3,
@@ -800,13 +821,13 @@
     new Chart(document.getElementById('dharStackChart'), {
       type: 'bar',
       data: {
-        labels: ['Dahej → Dhar'],
+        labels: ['Dahej → Dhar', 'Baroda → Dhar'],
         datasets: [
-          { label: 'High', data: [266], backgroundColor: '#e35542' },
-          { label: 'Medium', data: [15], backgroundColor: '#78cfde' },
-          { label: 'Low', data: [3], backgroundColor: '#bd68d9' },
-          { label: 'Good', data: [0], backgroundColor: '#6ec756' },
-          { label: 'Unclassified', data: [104], backgroundColor: '#667984' } // 388 - (266+15+3) = 104
+          { label: 'High', data: [266, 6], backgroundColor: '#e35542' },
+          { label: 'Medium', data: [15, 2], backgroundColor: '#78cfde' },
+          { label: 'Low', data: [3, 0], backgroundColor: '#bd68d9' },
+          { label: 'Good', data: [0, 0], backgroundColor: '#6ec756' },
+          { label: 'Unclassified', data: [104, 0], backgroundColor: '#667984' }
         ]
       },
       options: {
@@ -819,8 +840,8 @@
             ...commonTooltip,
             callbacks: {
               footer: function(tooltipItems) {
-                const total = 388;
-                const classified = 266 + 15 + 3 + 0;
+                const total = 396;
+                const classified = 266 + 15 + 3 + 0 + 6 + 2 + 0 + 0;
                 return `Classified Risk: ${classified} | Total Trips: ${total}`;
               }
             }
