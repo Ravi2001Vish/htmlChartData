@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bela & Dhar · Ultratech Dashboard</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0">
-  </script>
+  <title>Bela · Ultratech Dashboard</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
   <style>
     * {
       margin: 0;
@@ -102,7 +102,8 @@
       border-radius: 22px;
       padding: 16px 14px;
       border: 1px solid rgba(255, 255, 255, .055);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, .25), inset 0 1px rgba(255, 255, 255, .03);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .25),
+                  inset 0 1px rgba(255, 255, 255, .03);
       transition: .25s ease;
       overflow: hidden;
     }
@@ -326,6 +327,7 @@
       .charts {
         grid-template-columns: 1fr 1fr;
       }
+
       .chartBox:last-child {
         grid-column: span 2;
       }
@@ -335,20 +337,25 @@
       body {
         padding: 12px 9px;
       }
+
       .charts {
         grid-template-columns: 1fr;
       }
+
       .chartBox:last-child {
         grid-column: auto;
       }
+
       .summary-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .party-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
       }
+
       .canvas-wrapper {
         height: 220px;
       }
@@ -359,506 +366,776 @@
         grid-template-columns: 1fr 1fr;
         gap: 8px;
       }
+
       .card {
         padding: 11px 8px;
         border-radius: 17px;
       }
+
       .route {
         font-size: .55rem;
       }
+
       .total {
         font-size: 1.5rem;
       }
+
       .row {
         font-size: .58rem;
       }
+
       .summary-box strong {
         font-size: 1.2rem;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="dashboard-wrap">
 
-    <!-- MAIN HEADER -->
-    <div class="brand">
-      <h1>⬡ SSSYPL PARTY DASHBOARD</h1>
-      <span class="subtitle">1 AUGUST – 17 AUGUST · 2026</span>
-    </div>
+<div class="dashboard-wrap">
 
-    <!-- ===== BELA ULTRATECH ===== -->
-    <div class="party-header">
-      <div class="party-title">🏭 BELA · ULTRATECH</div>
-      <div class="party-total">5 Routes · 307 Total Trips</div>
-    </div>
-
-    <!-- BELA SUMMARY -->
-    <div class="summary-grid">
-      <div class="summary-box"><span>Total Trips</span><strong>307</strong></div>
-      <div class="summary-box"><span>Verified</span><strong>278</strong></div>
-      <div class="summary-box"><span>Running</span><strong>28</strong></div>
-      <div class="summary-box"><span>Verification</span><strong>90.6%</strong></div>
-    </div>
-
-    <!-- BELA CARDS -->
-    <div class="grid">
-      <!-- Churcha -->
-      <div class="card">
-        <div class="route">Churcha Mines → Bela</div>
-        <div class="total counter" data-count="157">0</div>
-        <div class="row"><span>High Risk</span><span>85</span></div>
-        <div class="row"><span>Medium Risk</span><span>38</span></div>
-        <div class="row"><span>Low Risk</span><span>24</span></div>
-        <div class="row"><span>Good Risk</span><span>9</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>144</span></div>
-        <div class="row"><span>Running</span><span>12</span></div>
-        <div class="progress"><div class="fill" style="width:91.7%"></div></div>
-      </div>
-
-      <!-- Amadan -->
-      <div class="card">
-        <div class="route">Amadan → Bela</div>
-        <div class="total counter" data-count="70">0</div>
-        <div class="row"><span>High Risk</span><span>29</span></div>
-        <div class="row"><span>Medium Risk</span><span>26</span></div>
-        <div class="row"><span>Low Risk</span><span>15</span></div>
-        <div class="row"><span>Good Risk</span><span>0</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>60</span></div>
-        <div class="row"><span>Running</span><span>10</span></div>
-        <div class="progress"><div class="fill" style="width:85.7%"></div></div>
-      </div>
-
-      <!-- Rampur -->
-      <div class="card">
-        <div class="route">Rampur Btaura → Bela</div>
-        <div class="total counter" data-count="20">0</div>
-        <div class="row"><span>High Risk</span><span>20</span></div>
-        <div class="row"><span>Medium Risk</span><span>0</span></div>
-        <div class="row"><span>Low Risk</span><span>0</span></div>
-        <div class="row"><span>Good Risk</span><span>0</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>20</span></div>
-        <div class="row"><span>Running</span><span>0</span></div>
-        <div class="progress"><div class="fill" style="width:100%"></div></div>
-      </div>
-
-      <!-- Bishrampur -->
-      <div class="card">
-        <div class="route">Bishrampur → Bela</div>
-        <div class="total counter" data-count="10">0</div>
-        <div class="row"><span>High Risk</span><span>9</span></div>
-        <div class="row"><span>Medium Risk</span><span>1</span></div>
-        <div class="row"><span>Low Risk</span><span>0</span></div>
-        <div class="row"><span>Good Risk</span><span>0</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>8</span></div>
-        <div class="row"><span>Running</span><span>2</span></div>
-        <div class="progress"><div class="fill" style="width:80%"></div></div>
-      </div>
-
-      <!-- Singrauli -->
-      <div class="card">
-        <div class="route">Singrauli → Bela</div>
-        <div class="total counter" data-count="50">0</div>
-        <div class="row"><span>High Risk</span><span>14</span></div>
-        <div class="row"><span>Medium Risk</span><span>5</span></div>
-        <div class="row"><span>Low Risk</span><span>0</span></div>
-        <div class="row"><span>Good Risk</span><span>0</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>46</span></div>
-        <div class="row"><span>Running</span><span>4</span></div>
-        <div class="progress"><div class="fill" style="width:92%"></div></div>
-      </div>
-    </div>
-
-    <!-- BELA CHARTS -->
-    <div class="charts">
-      <div class="chartBox">
-        <h2>🚚 Bela · Trips by Route</h2>
-        <div class="canvas-wrapper"><canvas id="belaBarChart"></canvas></div>
-      </div>
-      <div class="chartBox">
-        <h2>✓ Bela · Verified vs Running</h2>
-        <div class="canvas-wrapper"><canvas id="belaPieChart"></canvas></div>
-      </div>
-      <div class="chartBox">
-        <h2>📊 Bela · Risk Performance</h2>
-        <div class="canvas-wrapper"><canvas id="belaStackChart"></canvas></div>
-      </div>
-    </div>
-
-    <!-- BELA DATA TABLE -->
-    <div class="data-section">
-      <h3>📋 Bela Ultratech · Complete Route Breakdown</h3>
-      <table class="data-table">
-        <thead><tr><th>Route</th><th>Total</th><th>Verified</th><th>Running</th><th>High</th><th>Medium</th><th>Low</th><th>Good</th></tr></thead>
-        <tbody>
-          <tr><td class="route-name">Churcha Mines → Bela</td><td>157</td><td>144</td><td>12</td><td>85</td><td>38</td><td>24</td><td>9</td></tr>
-          <tr><td class="route-name">Amadan → Bela</td><td>70</td><td>60</td><td>10</td><td>29</td><td>26</td><td>15</td><td>0</td></tr>
-          <tr><td class="route-name">Rampur Btaura → Bela</td><td>20</td><td>20</td><td>0</td><td>20</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr><td class="route-name">Bishrampur → Bela</td><td>10</td><td>8</td><td>2</td><td>9</td><td>1</td><td>0</td><td>0</td></tr>
-          <tr><td class="route-name">Singrauli → Bela</td><td>50</td><td>46</td><td>4</td><td>14</td><td>5</td><td>0</td><td>0</td></tr>
-        </tbody>
-      </table>
-      <div class="data-foot">
-        <span>⚡ Bela Totals · Verified: <strong>278</strong> &nbsp;|&nbsp; Running: <strong>28</strong> &nbsp;|&nbsp; Combined: <strong>307</strong></span>
-        <span>Data: 1 Aug – 17 Aug 2026</span>
-      </div>
-    </div>
-
-    <!-- ===== DHAR ULTRATECH ===== -->
-    <div class="party-header">
-      <div class="party-title">🏭 DHAR · ULTRATECH</div>
-      <div class="party-total">2 Routes · 396 Total Trips</div>
-    </div>
-
-    <!-- DHAR SUMMARY -->
-    <div class="summary-grid">
-      <div class="summary-box"><span>Total Trips</span><strong>396</strong></div>
-      <div class="summary-box"><span>Verified</span><strong>358</strong></div>
-      <div class="summary-box"><span>Running</span><strong>46</strong></div>
-      <div class="summary-box"><span>Verification</span><strong>90.4%</strong></div>
-    </div>
-
-    <!-- DHAR CARDS -->
-    <div class="grid">
-      <!-- Dahej -->
-      <div class="card">
-        <div class="route">Dahej → Dhar</div>
-        <div class="total counter" data-count="388">0</div>
-        <div class="row"><span>High Risk</span><span>266</span></div>
-        <div class="row"><span>Medium Risk</span><span>15</span></div>
-        <div class="row"><span>Low Risk</span><span>3</span></div>
-        <div class="row"><span>Good Risk</span><span>0</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>351</span></div>
-        <div class="row"><span>Running</span><span>45</span></div>
-        <div class="progress"><div class="fill" style="width:90.5%"></div></div>
-      </div>
-
-      <!-- Baroda -->
-      <div class="card">
-        <div class="route">Baroda → Dhar</div>
-        <div class="total counter" data-count="8">0</div>
-        <div class="row"><span>High Risk</span><span>6</span></div>
-        <div class="row"><span>Medium Risk</span><span>2</span></div>
-        <div class="row"><span>Low Risk</span><span>0</span></div>
-        <div class="row"><span>Good Risk</span><span>0</span></div>
-        <hr>
-        <div class="row"><span>Verified</span><span>7</span></div>
-        <div class="row"><span>Running</span><span>1</span></div>
-        <div class="progress"><div class="fill" style="width:87.5%"></div></div>
-      </div>
-    </div>
-
-    <!-- DHAR CHARTS -->
-    <div class="charts">
-      <div class="chartBox">
-        <h2>🚚 Dhar · Trips by Route</h2>
-        <div class="canvas-wrapper"><canvas id="dharBarChart"></canvas></div>
-      </div>
-      <div class="chartBox">
-        <h2>✓ Dhar · Verified vs Running</h2>
-        <div class="canvas-wrapper"><canvas id="dharPieChart"></canvas></div>
-      </div>
-      <div class="chartBox">
-        <h2>📊 Dhar · Risk Performance</h2>
-        <div class="canvas-wrapper"><canvas id="dharStackChart"></canvas></div>
-      </div>
-    </div>
-
-    <!-- DHAR DATA TABLE -->
-    <div class="data-section">
-      <h3>📋 Dhar Ultratech · Complete Route Breakdown</h3>
-      <table class="data-table">
-        <thead><tr><th>Route</th><th>Total</th><th>Verified</th><th>Running</th><th>High</th><th>Medium</th><th>Low</th><th>Good</th></tr></thead>
-        <tbody>
-          <tr><td class="route-name">Dahej → Dhar</td><td>388</td><td>351</td><td>45</td><td>266</td><td>15</td><td>3</td><td>0</td></tr>
-          <tr><td class="route-name">Baroda → Dhar</td><td>8</td><td>7</td><td>1</td><td>6</td><td>2</td><td>0</td><td>0</td></tr>
-        </tbody>
-      </table>
-      <div class="data-foot">
-        <span>⚡ Dhar Totals · Verified: <strong>358</strong> &nbsp;|&nbsp; Running: <strong>46</strong> &nbsp;|&nbsp; Combined: <strong>396</strong></span>
-        <span>Data: 1 Aug – 17 Aug 2026</span>
-      </div>
-    </div>
-
-    <div class="footer">Designed for client presentation · Bela Ultratech & Dhar Ultratech · 1 Aug – 17 Aug 2026</div>
+  <!-- MAIN HEADER -->
+  <div class="brand">
+    <h1>⬡ SSSYPL PARTY DASHBOARD</h1>
+    <span class="subtitle">1 AUGUST – 20 AUGUST · 2026</span>
   </div>
 
-  <script>
-    Chart.register(ChartDataLabels);
+  <!-- BELA ULTRATECH -->
+  <div class="party-header">
+    <div class="party-title">🏭 BELA · ULTRATECH</div>
+    <div class="party-total">5 Routes · 361 Total Trips</div>
+  </div>
 
-    // ===== COUNTER ANIMATION =====
-    document.querySelectorAll('.counter').forEach(counter => {
-      const target = parseInt(counter.dataset.count);
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / 55));
-      const interval = setInterval(() => {
-        current += step;
-        if (current >= target) { current = target;
-          clearInterval(interval); }
-        counter.textContent = current;
-      }, 18);
-    });
+  <!-- BELA SUMMARY -->
+  <div class="summary-grid">
+    <div class="summary-box">
+      <span>Total Trips</span>
+      <strong>361</strong>
+    </div>
 
-    const commonTooltip = {
-      backgroundColor: 'rgba(5,15,22,.96)',
-      titleColor: '#fff',
-      bodyColor: '#d9edf7',
-      borderColor: 'rgba(255,255,255,.18)',
-      borderWidth: 1,
-      padding: 10,
-      displayColors: true
-    };
+    <div class="summary-box">
+      <span>Verified</span>
+      <strong>309</strong>
+    </div>
 
-    // ===== BELA BAR CHART =====
-    new Chart(document.getElementById('belaBarChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Churcha', 'Amadan', 'Rampur', 'Bishrampur', 'Singrauli'],
-        datasets: [{
-          label: 'Trips',
-          data: [157, 70, 20, 10, 50],
-          backgroundColor: ['#2fc7b0', '#3f9fd6', '#e6873c', '#a468c7', '#42b8c9'],
-          borderRadius: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 1800, easing: 'easeOutQuart' },
-        plugins: {
-          legend: { display: false },
-          tooltip: commonTooltip,
-          datalabels: {
-            display: true,
-            anchor: 'end',
-            align: 'top',
-            offset: 4,
-            color: '#fff',
-            backgroundColor: 'rgba(5,18,25,.85)',
-            borderRadius: 6,
-            padding: 5,
-            font: { size: 11, weight: 'bold' }
-          }
-        },
-        scales: {
-          y: { beginAtZero: true, grace: '15%', grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#bfd7e5',
-              font: { size: 9 } } },
-          x: { grid: { display: false }, ticks: { color: '#bfd7e5', font: { size: 9 } } }
-        }
+    <div class="summary-box">
+      <span>Running</span>
+      <strong>52</strong>
+    </div>
+
+    <div class="summary-box">
+      <span>Verification</span>
+      <strong>85.6%</strong>
+    </div>
+  </div>
+
+  <!-- BELA CARDS -->
+  <div class="grid">
+
+    <!-- Churcha -->
+    <div class="card">
+      <div class="route">Churcha Mines → Bela</div>
+      <div class="total counter" data-count="198">0</div>
+
+      <div class="row"><span>High Risk</span><span>89</span></div>
+      <div class="row"><span>Medium Risk</span><span>34</span></div>
+      <div class="row"><span>Low Risk</span><span>58</span></div>
+      <div class="row"><span>Good Risk</span><span>10</span></div>
+
+      <hr>
+
+      <div class="row"><span>Verified</span><span>159</span></div>
+      <div class="row"><span>Running</span><span>39</span></div>
+
+      <div class="progress">
+        <div class="fill" style="width:80.3%"></div>
+      </div>
+    </div>
+
+    <!-- Amadan -->
+    <div class="card">
+      <div class="route">Amadan → Bela</div>
+      <div class="total counter" data-count="80">0</div>
+
+      <div class="row"><span>High Risk</span><span>32</span></div>
+      <div class="row"><span>Medium Risk</span><span>34</span></div>
+      <div class="row"><span>Low Risk</span><span>14</span></div>
+      <div class="row"><span>Good Risk</span><span>0</span></div>
+
+      <hr>
+
+      <div class="row"><span>Verified</span><span>71</span></div>
+      <div class="row"><span>Running</span><span>9</span></div>
+
+      <div class="progress">
+        <div class="fill" style="width:88.8%"></div>
+      </div>
+    </div>
+
+    <!-- Rampur -->
+    <div class="card">
+      <div class="route">Rampur Btaura → Bela</div>
+      <div class="total counter" data-count="23">0</div>
+
+      <div class="row"><span>High Risk</span><span>23</span></div>
+      <div class="row"><span>Medium Risk</span><span>0</span></div>
+      <div class="row"><span>Low Risk</span><span>0</span></div>
+      <div class="row"><span>Good Risk</span><span>0</span></div>
+
+      <hr>
+
+      <div class="row"><span>Verified</span><span>20</span></div>
+      <div class="row"><span>Running</span><span>3</span></div>
+
+      <div class="progress">
+        <div class="fill" style="width:87%"></div>
+      </div>
+    </div>
+
+    <!-- Bishrampur -->
+    <div class="card">
+      <div class="route">Bishrampur → Bela</div>
+      <div class="total counter" data-count="10">0</div>
+
+      <div class="row"><span>High Risk</span><span>9</span></div>
+      <div class="row"><span>Medium Risk</span><span>1</span></div>
+      <div class="row"><span>Low Risk</span><span>0</span></div>
+      <div class="row"><span>Good Risk</span><span>0</span></div>
+
+      <hr>
+
+      <div class="row"><span>Verified</span><span>10</span></div>
+      <div class="row"><span>Running</span><span>0</span></div>
+
+      <div class="progress">
+        <div class="fill" style="width:100%"></div>
+      </div>
+    </div>
+
+    <!-- Singrauli -->
+    <div class="card">
+      <div class="route">Singrauli → Bela</div>
+      <div class="total counter" data-count="50">0</div>
+
+      <div class="row"><span>High Risk</span><span>14</span></div>
+      <div class="row"><span>Medium Risk</span><span>5</span></div>
+      <div class="row"><span>Low Risk</span><span>0</span></div>
+      <div class="row"><span>Good Risk</span><span>0</span></div>
+
+      <hr>
+
+      <div class="row"><span>Verified</span><span>49</span></div>
+      <div class="row"><span>Running</span><span>1</span></div>
+
+      <div class="progress">
+        <div class="fill" style="width:98%"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BELA CHARTS -->
+  <div class="charts">
+
+    <!-- BAR CHART -->
+    <div class="chartBox">
+      <h2>🚚 Bela · Trips by Route</h2>
+      <div class="canvas-wrapper">
+        <canvas id="belaBarChart"></canvas>
+      </div>
+    </div>
+
+    <!-- PIE CHART -->
+    <div class="chartBox">
+      <h2>✓ Bela · Verified vs Running</h2>
+      <div class="canvas-wrapper">
+        <canvas id="belaPieChart"></canvas>
+      </div>
+    </div>
+
+    <!-- RISK CHART -->
+    <div class="chartBox">
+      <h2>📊 Bela · Risk Performance</h2>
+      <div class="canvas-wrapper">
+        <canvas id="belaStackChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BELA DATA TABLE -->
+  <div class="data-section">
+
+    <h3>📋 Bela Ultratech · Complete Route Breakdown</h3>
+
+    <table class="data-table">
+
+      <thead>
+        <tr>
+          <th>Route</th>
+          <th>Total</th>
+          <th>Verified</th>
+          <th>Running</th>
+          <th>High</th>
+          <th>Medium</th>
+          <th>Low</th>
+          <th>Good</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td class="route-name">Churcha Mines → Bela</td>
+          <td>198</td>
+          <td>159</td>
+          <td>39</td>
+          <td>89</td>
+          <td>34</td>
+          <td>58</td>
+          <td>10</td>
+        </tr>
+
+        <tr>
+          <td class="route-name">Amadan → Bela</td>
+          <td>80</td>
+          <td>71</td>
+          <td>9</td>
+          <td>32</td>
+          <td>34</td>
+          <td>14</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td class="route-name">Rampur Btaura → Bela</td>
+          <td>23</td>
+          <td>20</td>
+          <td>3</td>
+          <td>23</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td class="route-name">Bishrampur → Bela</td>
+          <td>10</td>
+          <td>10</td>
+          <td>0</td>
+          <td>9</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td class="route-name">Singrauli → Bela</td>
+          <td>50</td>
+          <td>49</td>
+          <td>1</td>
+          <td>14</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <div class="data-foot">
+      <span>
+        ⚡ Bela Totals · Verified:
+        <strong>309</strong>
+        &nbsp;|&nbsp;
+        Running:
+        <strong>52</strong>
+        &nbsp;|&nbsp;
+        Combined:
+        <strong>361</strong>
+      </span>
+
+      <span>Data: 1 Aug – 20 Aug 2026</span>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Designed for client presentation · Bela Ultratech · 1 Aug – 20 Aug 2026
+  </div>
+
+</div>
+
+
+<script>
+
+  Chart.register(ChartDataLabels);
+
+  // ==============================
+  // COUNTER ANIMATION
+  // ==============================
+
+  document.querySelectorAll('.counter').forEach(counter => {
+
+    const target = parseInt(counter.dataset.count);
+    let current = 0;
+
+    const step = Math.max(1, Math.floor(target / 55));
+
+    const interval = setInterval(() => {
+
+      current += step;
+
+      if (current >= target) {
+        current = target;
+        clearInterval(interval);
       }
-    });
 
-    // ===== BELA PIE =====
-    new Chart(document.getElementById('belaPieChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Verified', 'Running'],
-        datasets: [{
-          data: [278, 28],
-          backgroundColor: ['#2ecfb0', '#e8535a'],
-          borderColor: 'rgba(12,26,34,.8)',
-          borderWidth: 3,
-          hoverOffset: 10
-        }]
+      counter.textContent = current;
+
+    }, 18);
+
+  });
+
+
+  // ==============================
+  // COMMON TOOLTIP
+  // ==============================
+
+  const commonTooltip = {
+
+    backgroundColor: 'rgba(5,15,22,.96)',
+    titleColor: '#fff',
+    bodyColor: '#d9edf7',
+    borderColor: 'rgba(255,255,255,.18)',
+    borderWidth: 1,
+    padding: 10,
+    displayColors: true
+
+  };
+
+
+  // ==============================
+  // BELA BAR CHART
+  // ==============================
+
+  new Chart(document.getElementById('belaBarChart'), {
+
+    type: 'bar',
+
+    data: {
+
+      labels: [
+        'Churcha',
+        'Amadan',
+        'Rampur',
+        'Bishrampur',
+        'Singrauli'
+      ],
+
+      datasets: [{
+
+        label: 'Trips',
+
+        data: [
+          198,
+          80,
+          23,
+          10,
+          50
+        ],
+
+        backgroundColor: [
+          '#2fc7b0',
+          '#3f9fd6',
+          '#e6873c',
+          '#a468c7',
+          '#42b8c9'
+        ],
+
+        borderRadius: 8
+
+      }]
+
+    },
+
+    options: {
+
+      responsive: true,
+      maintainAspectRatio: false,
+
+      animation: {
+        duration: 1800,
+        easing: 'easeOutQuart'
       },
-      options: {
-        cutout: '62%',
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 2000 },
-        plugins: {
-          legend: { position: 'bottom', labels: { color: '#cde0ed', boxWidth: 10, padding: 14, font: { size: 10 } } },
-          tooltip: {
-            ...commonTooltip,
-            callbacks: {
-              label: function(context) {
-                const value = context.raw;
-                const data = context.chart.data.datasets[0].data;
-                const total = data.reduce((a, b) => a + b, 0);
-                const percentage = ((value / total) * 100).toFixed(1);
-                return `${context.label}: ${value} (${percentage}%)`;
-              }
-            }
+
+      plugins: {
+
+        legend: {
+          display: false
+        },
+
+        tooltip: commonTooltip,
+
+        datalabels: {
+
+          display: true,
+          anchor: 'end',
+          align: 'top',
+          offset: 4,
+
+          color: '#fff',
+
+          backgroundColor: 'rgba(5,18,25,.85)',
+
+          borderRadius: 6,
+
+          padding: 5,
+
+          font: {
+            size: 11,
+            weight: 'bold'
+          }
+
+        }
+
+      },
+
+      scales: {
+
+        y: {
+
+          beginAtZero: true,
+          grace: '15%',
+
+          grid: {
+            color: 'rgba(255,255,255,.04)'
           },
-          datalabels: {
-            color: '#fff',
-            font: { size: 12, weight: 'bold' },
-            formatter: function(value, context) {
-              const data = context.chart.data.datasets[0].data;
-              const total = data.reduce((a, b) => a + b, 0);
-              const percentage = ((value / total) * 100).toFixed(1);
-              return value + '\n' + percentage + '%';
+
+          ticks: {
+            color: '#bfd7e5',
+            font: {
+              size: 9
             }
           }
-        }
-      }
-    });
 
-    // ===== BELA STACKED RISK =====
-    new Chart(document.getElementById('belaStackChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Churcha', 'Amadan', 'Rampur', 'Bishrampur', 'Singrauli'],
-        datasets: [
-          { label: 'High', data: [85, 29, 20, 9, 14], backgroundColor: '#e35542' },
-          { label: 'Medium', data: [38, 26, 0, 1, 5], backgroundColor: '#78cfde' },
-          { label: 'Low', data: [24, 15, 0, 0, 0], backgroundColor: '#bd68d9' },
-          { label: 'Good', data: [9, 0, 0, 0, 0], backgroundColor: '#6ec756' }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 2200 },
-        plugins: {
-          legend: { position: 'bottom', labels: { color: '#cde0ed', boxWidth: 10, padding: 8, font: { size: 9 } } },
-          tooltip: commonTooltip,
-          datalabels: {
-            display: function(context) { return context.dataset.data[context.dataIndex] > 0; },
-            color: '#fff',
-            font: { size: 9, weight: 'bold' },
-            formatter: function(value) { return value > 0 ? value : ''; }
-          }
         },
-        scales: {
-          x: { stacked: true, grid: { display: false }, ticks: { color: '#bfd7e5', font: { size: 9 } } },
-          y: { stacked: true, beginAtZero: true, grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#bfd7e5',
-              font: { size: 9 } } }
-        }
-      }
-    });
 
-    // ===== DHAR BAR CHART =====
-    new Chart(document.getElementById('dharBarChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Dahej → Dhar', 'Baroda → Dhar'],
-        datasets: [{
-          label: 'Trips',
-          data: [388, 8],
-          backgroundColor: ['#4d9de0', '#e6873c'],
-          borderRadius: 10
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 1800 },
-        plugins: {
-          legend: { display: false },
-          tooltip: commonTooltip,
-          datalabels: {
-            display: true,
-            anchor: 'end',
-            align: 'top',
-            color: '#fff',
-            backgroundColor: 'rgba(5,18,25,.85)',
-            borderRadius: 6,
-            padding: 6,
-            font: { size: 12, weight: 'bold' }
-          }
-        },
-        scales: {
-          y: { beginAtZero: true, grace: '15%', grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#bfd7e5' } },
-          x: { grid: { display: false }, ticks: { color: '#bfd7e5' } }
-        }
-      }
-    });
+        x: {
 
-    // ===== DHAR PIE =====
-    new Chart(document.getElementById('dharPieChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Verified', 'Running'],
-        datasets: [{
-          data: [358, 46],
-          backgroundColor: ['#3fc7a7', '#e85b62'],
-          borderColor: 'rgba(12,26,34,.8)',
-          borderWidth: 3,
-          hoverOffset: 12
-        }]
-      },
-      options: {
-        cutout: '62%',
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 2000 },
-        plugins: {
-          legend: { position: 'bottom', labels: { color: '#cde0ed', boxWidth: 10, padding: 14, font: { size: 10 } } },
-          tooltip: {
-            ...commonTooltip,
-            callbacks: {
-              label: function(context) {
-                const value = context.raw;
-                const data = context.chart.data.datasets[0].data;
-                const total = data.reduce((a, b) => a + b, 0);
-                const percentage = ((value / total) * 100).toFixed(1);
-                return `${context.label}: ${value} (${percentage}%)`;
-              }
-            }
+          grid: {
+            display: false
           },
-          datalabels: {
-            color: '#fff',
-            font: { size: 12, weight: 'bold' },
-            formatter: function(value, context) {
-              const data = context.chart.data.datasets[0].data;
-              const total = data.reduce((a, b) => a + b, 0);
-              const percentage = ((value / total) * 100).toFixed(1);
-              return value + '\n' + percentage + '%';
-            }
-          }
-        }
-      }
-    });
 
-    // ===== DHAR STACKED RISK (including unclassified) =====
-    new Chart(document.getElementById('dharStackChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Dahej → Dhar', 'Baroda → Dhar'],
-        datasets: [
-          { label: 'High', data: [266, 6], backgroundColor: '#e35542' },
-          { label: 'Medium', data: [15, 2], backgroundColor: '#78cfde' },
-          { label: 'Low', data: [3, 0], backgroundColor: '#bd68d9' },
-          { label: 'Good', data: [0, 0], backgroundColor: '#6ec756' },
-          { label: 'Unclassified', data: [104, 0], backgroundColor: '#667984' }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 2200 },
-        plugins: {
-          legend: { position: 'bottom', labels: { color: '#cde0ed', boxWidth: 10, padding: 8, font: { size: 9 } } },
-          tooltip: {
-            ...commonTooltip,
-            callbacks: {
-              footer: function(tooltipItems) {
-                const total = 396;
-                const classified = 266 + 15 + 3 + 0 + 6 + 2 + 0 + 0;
-                return `Classified Risk: ${classified} | Total Trips: ${total}`;
-              }
+          ticks: {
+            color: '#bfd7e5',
+            font: {
+              size: 9
             }
-          },
-          datalabels: {
-            display: function(context) { return context.dataset.data[context.dataIndex] > 0; },
-            color: '#fff',
-            font: { size: 10, weight: 'bold' },
-            formatter: function(value) { return value > 0 ? value : ''; }
           }
-        },
-        scales: {
-          x: { stacked: true, grid: { display: false }, ticks: { color: '#bfd7e5' } },
-          y: { stacked: true, beginAtZero: true, max: 410, grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#bfd7e5' } }
+
         }
+
       }
-    });
-  </script>
+
+    }
+
+  });
+
+
+  // ==============================
+  // BELA VERIFIED VS RUNNING
+  // ==============================
+
+  new Chart(document.getElementById('belaPieChart'), {
+
+    type: 'doughnut',
+
+    data: {
+
+      labels: [
+        'Verified',
+        'Running'
+      ],
+
+      datasets: [{
+
+        data: [
+          309,
+          52
+        ],
+
+        backgroundColor: [
+          '#2ecfb0',
+          '#e8535a'
+        ],
+
+        borderColor: 'rgba(12,26,34,.8)',
+
+        borderWidth: 3,
+
+        hoverOffset: 10
+
+      }]
+
+    },
+
+    options: {
+
+      cutout: '62%',
+
+      responsive: true,
+
+      maintainAspectRatio: false,
+
+      animation: {
+        duration: 2000
+      },
+
+      plugins: {
+
+        legend: {
+
+          position: 'bottom',
+
+          labels: {
+
+            color: '#cde0ed',
+
+            boxWidth: 10,
+
+            padding: 14,
+
+            font: {
+              size: 10
+            }
+
+          }
+
+        },
+
+        tooltip: {
+
+          ...commonTooltip,
+
+          callbacks: {
+
+            label: function(context) {
+
+              const value = context.raw;
+
+              const data =
+                context.chart.data.datasets[0].data;
+
+              const total =
+                data.reduce((a, b) => a + b, 0);
+
+              const percentage =
+                ((value / total) * 100).toFixed(1);
+
+              return `${context.label}: ${value} (${percentage}%)`;
+
+            }
+
+          }
+
+        },
+
+        datalabels: {
+
+          color: '#fff',
+
+          font: {
+            size: 12,
+            weight: 'bold'
+          },
+
+          formatter: function(value, context) {
+
+            const data =
+              context.chart.data.datasets[0].data;
+
+            const total =
+              data.reduce((a, b) => a + b, 0);
+
+            const percentage =
+              ((value / total) * 100).toFixed(1);
+
+            return value + '\n' + percentage + '%';
+
+          }
+
+        }
+
+      }
+
+    }
+
+  });
+
+
+  // ==============================
+  // BELA STACKED RISK CHART
+  // ==============================
+
+  new Chart(document.getElementById('belaStackChart'), {
+
+    type: 'bar',
+
+    data: {
+
+      labels: [
+        'Churcha',
+        'Amadan',
+        'Rampur',
+        'Bishrampur',
+        'Singrauli'
+      ],
+
+      datasets: [
+
+        {
+          label: 'High',
+          data: [89, 32, 23, 9, 14],
+          backgroundColor: '#e35542'
+        },
+
+        {
+          label: 'Medium',
+          data: [34, 34, 0, 1, 5],
+          backgroundColor: '#78cfde'
+        },
+
+        {
+          label: 'Low',
+          data: [58, 14, 0, 0, 0],
+          backgroundColor: '#bd68d9'
+        },
+
+        {
+          label: 'Good',
+          data: [10, 0, 0, 0, 0],
+          backgroundColor: '#6ec756'
+        }
+
+      ]
+
+    },
+
+    options: {
+
+      responsive: true,
+
+      maintainAspectRatio: false,
+
+      animation: {
+        duration: 2200
+      },
+
+      plugins: {
+
+        legend: {
+
+          position: 'bottom',
+
+          labels: {
+
+            color: '#cde0ed',
+
+            boxWidth: 10,
+
+            padding: 8,
+
+            font: {
+              size: 9
+            }
+
+          }
+
+        },
+
+        tooltip: commonTooltip,
+
+        datalabels: {
+
+          display: function(context) {
+
+            return context.dataset.data[
+              context.dataIndex
+            ] > 0;
+
+          },
+
+          color: '#fff',
+
+          font: {
+            size: 9,
+            weight: 'bold'
+          },
+
+          formatter: function(value) {
+
+            return value > 0 ? value : '';
+
+          }
+
+        }
+
+      },
+
+      scales: {
+
+        x: {
+
+          stacked: true,
+
+          grid: {
+            display: false
+          },
+
+          ticks: {
+
+            color: '#bfd7e5',
+
+            font: {
+              size: 9
+            }
+
+          }
+
+        },
+
+        y: {
+
+          stacked: true,
+
+          beginAtZero: true,
+
+          grid: {
+            color: 'rgba(255,255,255,.04)'
+          },
+
+          ticks: {
+
+            color: '#bfd7e5',
+
+            font: {
+              size: 9
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  });
+
+</script>
+
 </body>
 </html>
